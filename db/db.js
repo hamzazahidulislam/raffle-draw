@@ -92,8 +92,21 @@ class MyDB {
 
   /**
    * find winners
+   * @param {number} winnerCount
+   * @return {Ticket[]} returns an array of Ticket objects
    */
-  draw() {}
+  draw(winnerCount) {
+    const tickets = this.find()
+    const winners = []
+    while (winners.length < winnerCount) {
+      const winner = tickets.splice(
+        Math.floor(Math.random() * tickets.length),
+        1
+      )[0]
+      winners.push(winner)
+    }
+    return winners
+  }
 }
 
 const myDB = new MyDB()
