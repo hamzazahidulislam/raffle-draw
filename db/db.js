@@ -9,14 +9,29 @@ class MyDB{
      * cretae and save a new Ticket
      * @param {string} username 
      * @param {number} price 
+     * @returns {Ticket} returns a new Ticket object
      */
     create(username,price){
-        username
-        const ticket = new Ticket();
+        const ticket = new Ticket(username,price);
+        this.tickets.push(ticket);
+        return ticket;
     }
 
-    //sell multiple tickets
-    bulkCreate(){
+    /**
+     * create a multiple ticket for a single user
+     * @param {string} username
+     * @param {number} price
+     * @param {number} quantity
+     * @returns {Ticket[]} returns an array of Ticket objects
+     */
+    bulkCreate(username,price,quantity){
+        const result = [];
+        for(let i = 0; i < quantity; i++){
+            this.create(username,price);
+            result.push(this.tickets[this.tickets.length-1]);
+        }
+        return result;
+    }
 
     }
 
