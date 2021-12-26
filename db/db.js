@@ -105,6 +105,7 @@ class MyDB {
       )[0]
       winners.push(winner)
     }
+    console.log('winner index', winners)
     return winners
   }
 }
