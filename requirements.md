@@ -26,6 +26,6 @@ Routes:
 - /tickets/u/:username PATCH - update tickets for a given username
 - /tickets/u/:username DELETE - delete all tickets for a given username
 - /tickets/sell POST - create new ticket
-- /tickets/bulk POST - bull create new tickets
+- /tickets/bulk POST - bulk create new tickets
 - /tickets/draw GET - raffle draw
 - /tickets GET - find all tickets

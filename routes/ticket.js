@@ -58,6 +58,7 @@ router.get('/u/:username', (req, res) => {
     res.status(404).send('Tickets not found')
   }
 })
+
 router.patch('/u/:username', () => {})
 router.delete('/u/:username', () => {})
 
@@ -66,6 +67,7 @@ router.delete('/u/:username', () => {})
  * @api {post} /api/v1/tickets/sell create new ticket
  */
 router.post('/sell', (req, res) => {
+  console.log(req.body)
   const { username, price } = req.body
   const ticket = db.create(username, price)
   res.status(201).json({ message: 'Ticket created Successfully', ticket })
