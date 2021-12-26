@@ -9,5 +9,6 @@ app.get('/_ah/health', (_req, res) => {
   res.status(200).send('ok')
 })
 
+app.use('/', require('./routes'))
 
 module.exports = app
