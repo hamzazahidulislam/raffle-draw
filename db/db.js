@@ -96,17 +96,30 @@ class MyDB {
    * @return {Ticket[]} returns an array of Ticket objects
    */
   draw(winnerCount) {
-    const tickets = this.find()
-    const winners = []
-    while (winners.length < winnerCount) {
-      const winner = tickets.splice(
-        Math.floor(Math.random() * tickets.length),
-        1
-      )[0]
-      winners.push(winner)
+    let winnerIndexs = new Array(winnerCount)
+
+    let index = 0
+    while (index < winnerCount) {
+      let winnerIndex = Math.floor(Math.random() * this.tickets.length)
+      console.log('winnerIndex: ', winnerIndex)
+      if (!winnerIndexs.includes(winnerIndex)) {
+        winnerIndexs[index++] = winnerIndex
+        continue
+      }
     }
-    console.log('winner index', winners)
-    return winners
+
+    const winner = winnerIndexs.map((index) => this.tickets[index])
+    return winner
+    // const tickets = this.find()
+    // const winners = []
+    // while (winners.length < winnerCount) {
+    //   const winner = tickets.splice(
+    //     Math.floor(Math.random() * tickets.length),
+    //     1
+    //   )[0]
+    //   winners.push(winner)
+    // }
+    // return winners
   }
 }
 
