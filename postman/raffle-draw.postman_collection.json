@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "cbf0e82b-0936-44a4-ba20-c62ba0dc8d9c",
+		"name": "Raffle Draw",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Helth CheckUp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4444/_ah/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"_ah",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All Tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4444/api/v1/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"api",
+						"v1",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a New Ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Hamza\",\r\n    \"price\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4444/api/v1/tickets/sell",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"api",
+						"v1",
+						"tickets",
+						"sell"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Create New Tickets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Hamza\",\r\n    \"price\":15,\r\n    \"quantity\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4444/api/v1/tickets/bulk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"api",
+						"v1",
+						"tickets",
+						"bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Raffle Draw",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4444/api/v1/tickets/draw?wc=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"api",
+						"v1",
+						"tickets",
+						"draw"
+					],
+					"query": [
+						{
+							"key": "wc",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Ticket By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4444/api/v1/tickets/t/Os0uPojWi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"api",
+						"v1",
+						"tickets",
+						"t",
+						"Os0uPojWi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Ticket By TicketId",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Hamza\",\r\n    \"price\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4444/api/v1/tickets/t/gFakoXCLL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"api",
+						"v1",
+						"tickets",
+						"t",
+						"gFakoXCLL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Ticket By TicketId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4444/api/v1/tickets/t/X-XaTX7iL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"api",
+						"v1",
+						"tickets",
+						"t",
+						"X-XaTX7iL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Tickets For a given username",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Hamza\",\r\n    \"price\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4444/api/v1/tickets/u/Hamza",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"api",
+						"v1",
+						"tickets",
+						"u",
+						"Hamza"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
